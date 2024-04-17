@@ -1,0 +1,154 @@
+.item {
+  background-color: #fff;
+  border: 1px solid rgba(16, 24, 40, 0.2);
+  border-radius: 20px;
+  padding: 24px;
+  width: 888px;
+  height: 358px;
+  display: flex;
+  gap: 24px;
+}
+
+.image {
+  border-radius: 10px;
+  width: 290px;
+  height: 310px;
+  object-fit: cover;
+}
+
+.topLine {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.title,
+.price,
+.euroIcon {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 125%;
+  color: #101828;
+}
+
+.priceBox {
+  display: flex;
+  align-items: center;
+}
+
+.heartButton {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.heartIcon {
+  width: 24px;
+  height: 24px;
+}
+.favorite {
+  color: #e44848;
+  stroke: #e44848;
+}
+
+.infoBox {
+  margin-bottom: 24px;
+  display: flex;
+
+  align-items: center;
+}
+
+.starIcon {
+  margin-right: 4px;
+  color: #ffc531;
+}
+
+.raiting {
+  margin-right: 16px;
+  position: relative;
+}
+
+.raiting::after {
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #101828;
+  margin-right: 16px;
+  position: relative;
+}
+
+.locationIcon,
+.location {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #101828;
+}
+.locationIcon {
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+}
+
+.info {
+  width: 526px;
+}
+
+.description {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #475467;
+  margin-bottom: 24px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mainPropList {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 24px;
+  gap: 8px;
+}
+
+.mainPropItem {
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #f2f4f7;
+  mix-blend-mode: multiply;
+  border-radius: 100px;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+  text-align: center;
+  color: #101828;
+}
+
+.send {
+  background: #e44848;
+  border-radius: 200px;
+  padding: 16px 40px;
+  border: none;
+  cursor: pointer;
+
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  color: #fff;
+}

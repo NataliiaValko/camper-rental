@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 const BASE_URL = "https://661daf7898427bbbef0265db.mockapi.io";
 const API_ANDPOINT = "/adverts";
 
-const campersAPI = createApi({
+export const campersAPI = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: BASE_URL,
   }),
