@@ -12,7 +12,7 @@ import {
 import storage from "redux-persist/lib/storage";
 
 import { favoriteCampersReducer } from "./favoriteCampers/slice";
-import { campersAPI } from "./campers/campersAPI";
+import { campersReducer } from "./campers/slice";
 
 const persistConfig = {
   key: "root",
@@ -25,7 +25,7 @@ const persistedReducer = persistReducer(persistConfig, favoriteCampersReducer);
 export const store = configureStore({
   reducer: {
     favoriteCampers: persistedReducer,
-    [campersAPI.reducerPath]: campersAPI.reducer,
+    campers: campersReducer,
   },
   middleware: (getDefaultMiddleware) => [
     ...getDefaultMiddleware({
@@ -33,7 +33,6 @@ export const store = configureStore({
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     }),
-    campersAPI.middleware,
   ],
 });
 
