@@ -1,10 +1,14 @@
 import { BsFire } from "react-icons/bs";
 import { CgSmartHomeRefrigerator, CgTv } from "react-icons/cg";
 import { FaBath, FaFireBurner } from "react-icons/fa6";
-import { HiOutlineRadio } from "react-icons/hi2";
+
 import { IoBedOutline, IoPeopleOutline, IoWaterOutline } from "react-icons/io5";
 import { LuDisc3, LuShowerHead } from "react-icons/lu";
-import { MdOutlineAir, MdOutlineLocalGasStation } from "react-icons/md";
+import {
+  MdOutlineAir,
+  MdOutlineLocalGasStation,
+  MdOutlineRadio,
+} from "react-icons/md";
 import {
   TbAirConditioning,
   TbAutomaticGearbox,
@@ -81,7 +85,7 @@ export default function PropsList({
     {
       prop: "radio",
       value: Boolean(details.radio) && `Radio`,
-      icon: <HiOutlineRadio />,
+      icon: <MdOutlineRadio />,
     },
     {
       prop: "toilet",

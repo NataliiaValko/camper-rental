@@ -23,8 +23,6 @@ export const filtersReducer = filtersSlice.reducer;
 export const selectFilteredCampers = createSelector(
   [selectItems, selectFilters],
   (campers, filters) => {
-    // console.log(campers);
-    // console.log(filters);
     const normalizedFilters = Object.fromEntries(
       Object.entries(filters)
         .filter(([key, value]) => {

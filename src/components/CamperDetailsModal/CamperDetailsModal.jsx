@@ -19,7 +19,7 @@ export default function CamperDetailsModal({
   isModalOpen,
   onCloseModal,
 }) {
-  const [activeTab, setActiveTab] = useState("");
+  const [activeTab, setActiveTab] = useState("features");
   const { name, price, rating, location, description, gallery, reviews } =
     camper;
 
@@ -74,7 +74,7 @@ export default function CamperDetailsModal({
               <button
                 className={clsx(
                   css.tab,
-                  (!activeTab || activeTab === "features") && css.active
+                  activeTab === "features" && css.active
                 )}
                 onClick={() => {
                   setActiveTab("features");
