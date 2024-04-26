@@ -138,17 +138,24 @@
   color: #101828;
 }
 
-.send {
+.button {
   background: #e44848;
   border-radius: 200px;
   padding: 16px 40px;
   border: none;
   cursor: pointer;
 
+  margin-top: 24px;
   font-family: inherit;
   font-weight: 500;
   font-size: 16px;
   line-height: 150%;
   letter-spacing: -0.01em;
   color: #fff;
+  transition: background-color liner 250ms;
+
+  &:hover,
+  &:focus {
+    background-color: #d84343;
+  }
 }

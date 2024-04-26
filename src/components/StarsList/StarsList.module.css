@@ -1,0 +1,9 @@
+.starIcon {
+  color: #ffc531;
+}
+
+.list {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}

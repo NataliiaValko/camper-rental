@@ -1,4 +1,4 @@
-.hidden {
+/* .hidden {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -10,8 +10,19 @@
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
-}
+} */
 
+.wrapper {
+  display: flex;
+  gap: 64px;
+  padding: 0 64px;
+}
 .section {
   padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.aside {
+  padding-top: 120px;
+  width: 360px;
 }

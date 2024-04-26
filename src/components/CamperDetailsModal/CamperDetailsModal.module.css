@@ -1,0 +1,265 @@
+.modalContainer {
+  position: relative;
+  width: 982px;
+  padding: 40px;
+  margin: 0 auto;
+  border-radius: 20px;
+  background: #fff;
+  border-radius: 20px;
+}
+
+.overlay {
+  position: fixed;
+  overflow: scroll;
+  top: 0;
+  left: 0;
+  padding: 122px 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(17, 18, 19, 0.4);
+}
+
+.title {
+  color: #101828;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 125%;
+  margin-bottom: 10px;
+}
+
+.closeIcon {
+  width: 32px;
+  height: 32px;
+  color: #101828;
+}
+
+.closeButton {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  position: absolute;
+  top: 40px;
+  right: 40px;
+}
+
+.infoBox {
+  margin-bottom: 16px;
+  display: flex;
+
+  align-items: center;
+}
+
+.raiting {
+  margin-right: 16px;
+  position: relative;
+}
+
+.raiting::after {
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #101828;
+  margin-right: 16px;
+  position: relative;
+}
+
+.locationIcon,
+.location {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #101828;
+}
+
+.locationIcon {
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+}
+
+.price,
+.euroIcon {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 125%;
+  color: #101828;
+}
+
+.currencyBox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(16, 24, 40, 0.2);
+  margin-bottom: 44px;
+}
+
+.reviews {
+  color: #101828;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  text-decoration-line: underline;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+}
+
+.starIcon {
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+  color: #ffc531;
+}
+
+.price {
+  color: #101828;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+}
+/*
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+} */
+
+.imageContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  gap: 16px;
+  margin: 0 0 24px;
+  list-style: none;
+}
+
+.detailsImg {
+  width: 290px;
+  height: 310px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.description {
+  color: #475467;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  margin-bottom: 44px;
+}
+
+.modalLink {
+  display: flex;
+  gap: 40px;
+  padding: 0;
+  margin: 0 0 24px;
+  list-style: none;
+}
+
+.modalBottomContainer {
+  display: flex;
+  width: 100%;
+  gap: 24px;
+}
+.modalLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+  width: 430px;
+}
+
+.reviewContainer {
+  display: flex;
+  gap: 24px;
+}
+.reviewLeftContainer {
+  width: 430px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.reviewTopContainer {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.avatarContainer {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+  background: #f2f4f7;
+}
+
+.reviewRightContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+.avatarText {
+  left: 21px;
+  top: 15px;
+  color: #e44848;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 125%;
+}
+
+.comment {
+  color: #475467;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+.tab {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  cursor: pointer;
+  color: #101828;
+  line-height: 120%;
+}
+
+.active {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -27px;
+    width: 100%;
+    height: 5px;
+    background-color: #e44848;
+  }
+}

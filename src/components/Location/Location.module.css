@@ -1,0 +1,32 @@
+.location {
+  width: 360px;
+}
+
+.label {
+  position: relative;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: rgba(16, 24, 40, 0.6);
+}
+
+.input {
+  border-radius: 10px;
+  padding: 18px 18px 18px 44px;
+  width: 100%;
+  background-color: #f7f7f7;
+  border: none;
+  line-height: 1.25;
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.icon {
+  position: absolute;
+  width: 18px;
+  height: 20px;
+  top: 50%;
+  left: 18px;
+  transform: translateY(-50%);
+}

@@ -15,3 +15,11 @@
 .section {
   padding-top: 120px;
 }
+
+.text {
+  text-align: center;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 125%;
+  color: #101828;
+}

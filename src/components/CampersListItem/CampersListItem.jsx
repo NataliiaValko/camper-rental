@@ -18,6 +18,9 @@ import {
   selectFavoriteItems,
 } from "../../redux/favoriteCampers/slice";
 import clsx from "clsx";
+import { useState } from "react";
+import CamperDetailsModal from "../CamperDetailsModal/CamperDetailsModal";
+import OptionsList from "../PropsList/PropsList";
 
 export default function CampersListItem({
   _id,
@@ -40,30 +43,36 @@ export default function CampersListItem({
   gallery,
   reviews,
 }) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const favoritesCampers = useSelector(selectFavoriteItems);
 
   const dispatch = useDispatch();
-  const capitalizeFirstLetter = (string) => {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  };
-  const mainProps = {
-    adults: { value: `${adults} adults`, icon: <IoPeopleOutline /> },
-    transmission: {
-      value: capitalizeFirstLetter(transmission),
-      icon: <TbAutomaticGearbox />,
-    },
-    engine: {
-      value: capitalizeFirstLetter(engine),
-      icon: <MdOutlineLocalGasStation />,
-    },
-    kitchen: { value: `${details.kitchen} Kitchen`, icon: <TbToolsKitchen2 /> },
-    beds: { value: `${details.beds} beds`, icon: <IoBedOutline /> },
-    airConditioner: {
-      value: details.airConditioner && "AC",
-      icon: <MdOutlineAir />,
-    },
-  };
+  // const capitalizeFirstLetter = (string) => {
+  //   return string.charAt(0).toUpperCase() + string.slice(1);
+  // };
 
+  const camper = {
+    _id,
+    name,
+    price,
+    rating,
+    location,
+    adults,
+    children,
+    engine,
+    transmission,
+    form,
+    length,
+    width,
+    height,
+    tank,
+    consumption,
+    description,
+    details,
+    gallery,
+    reviews,
+  };
   const exist = favoritesCampers.find((item) => _id === item._id);
 
   const toggleFavorite = () => {
@@ -92,6 +101,14 @@ export default function CampersListItem({
             reviews,
           })
         );
+  };
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
   };
 
   return (
@@ -126,15 +143,18 @@ export default function CampersListItem({
           </div>
 
           <p className={css.description}>{description}</p>
-          <ul className={css.mainPropList}>
-            {Object.values(mainProps).map(({ value, icon }, index) => (
-              <li className={css.mainPropItem} key={index}>
-                {icon} <p className={css.mainPropText}>{value}</p>
-              </li>
-            ))}
-          </ul>
-          <button className={css.send}>Show more</button>
+          <OptionsList camper={camper} length={6} />
+          <button onClick={handleOpenModal} className={css.button}>
+            Show more
+          </button>
         </div>
+        {isModalOpen && (
+          <CamperDetailsModal
+            onCloseModal={handleCloseModal}
+            isModalOpen={isModalOpen}
+            camper={camper}
+          />
+        )}
       </li>
     </>
   );
