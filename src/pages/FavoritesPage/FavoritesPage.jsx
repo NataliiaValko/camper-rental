@@ -1,9 +1,9 @@
-import CampersList from "../../components/CampersList/CampersList";
-
-import css from "./FavoritesPage.module.css";
 import { useSelector } from "react-redux";
 
+import CampersList from "../../components/CampersList";
 import { selectFavoriteItems } from "../../redux/favoriteCampers/slice";
+
+import css from "./FavoritesPage.module.css";
 
 export default function FavoritesPage() {
   const favoriteItems = useSelector(selectFavoriteItems);

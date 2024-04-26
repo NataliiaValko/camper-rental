@@ -1,14 +1,12 @@
 import { Field, Form, Formik } from "formik";
-
 import { useDispatch } from "react-redux";
-import { setFilters } from "../../redux/filters/slice";
-
 import { MdOutlineAir } from "react-icons/md";
 import { TbAutomaticGearbox, TbToolsKitchen2 } from "react-icons/tb";
 import { PiTelevisionSimple } from "react-icons/pi";
 import { LuShowerHead } from "react-icons/lu";
 import { CiLocationOn } from "react-icons/ci";
 
+import { setFilters } from "../../redux/filters/slice";
 import sprite from "../../assets/images/symbol-defs.svg";
 import css from "./Filters.module.css";
 
@@ -16,7 +14,6 @@ export default function Filters() {
   const dispatch = useDispatch();
 
   const handleSubmit = (values) => {
-    console.log(values);
     dispatch(setFilters(values));
   };
 

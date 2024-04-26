@@ -1,19 +1,16 @@
 import Modal from "react-modal";
 import { useState } from "react";
-
-import BookForm from "../BookForm/BookForm";
-
-import css from "./CamperDetailsModal.module.css";
 import { MdClose } from "react-icons/md";
 import { FaStar } from "react-icons/fa";
-import { GrLocation } from "react-icons/gr";
-import PropsList from "../PropsList/PropsList";
-import VehicleDetails from "../VehicleDetails/VehicleDetails";
 import { useEffect } from "react";
 import { CiLocationOn } from "react-icons/ci";
 import { TbCurrencyEuro } from "react-icons/tb";
 import clsx from "clsx";
-import StarsList from "../StarsList/StarsList";
+
+import Features from "../Features";
+import Reviews from "../Reviews";
+
+import css from "./CamperDetailsModal.module.css";
 
 Modal.setAppElement("#root");
 
@@ -23,27 +20,8 @@ export default function CamperDetailsModal({
   onCloseModal,
 }) {
   const [activeTab, setActiveTab] = useState("");
-  const {
-    _id,
-    name,
-    price,
-    rating,
-    location,
-    adults,
-    children,
-    engine,
-    transmission,
-    form,
-    length,
-    width,
-    height,
-    tank,
-    consumption,
-    description,
-    details,
-    gallery,
-    reviews,
-  } = camper;
+  const { name, price, rating, location, description, gallery, reviews } =
+    camper;
 
   useEffect(() => {
     document.body.style.overflow = "hidden";
@@ -58,7 +36,6 @@ export default function CamperDetailsModal({
         onRequestClose={onCloseModal}
         overlayClassName={css.overlay}
       >
-        {/* <div className={css.infoContainer}> */}
         <button
           type="button"
           onClick={onCloseModal}
@@ -118,43 +95,9 @@ export default function CamperDetailsModal({
             </li>
           </ul>
           <div className={css.line}></div>{" "}
-          {activeTab === "features" && (
-            <>
-              <div className={css.modalBottomContainer}>
-                <div className={css.modalLeft}>
-                  <PropsList camper={camper} />
-                  <VehicleDetails {...camper} />
-                </div>
-
-                <BookForm />
-              </div>
-            </>
-          )}
-          {activeTab === "reviews" && (
-            <div className={css.reviewContainer}>
-              <ul className={css.reviewLeftContainer}>
-                {reviews.map(
-                  ({ reviewer_name, reviewer_rating, comment }, index) => (
-                    <li key={index}>
-                      <div className={css.reviewTopContainer}>
-                        <span className={css.avatarContainer}>
-                          <p className={css.avatarText}>{reviewer_name[0]}</p>
-                        </span>
-                        <div className={css.reviewRightContainer}>
-                          <p>{reviewer_name}</p>
-                          <StarsList length={Math.round(reviewer_rating)} />
-                        </div>
-                      </div>
-                      <p className={css.comment}>{comment}</p>
-                    </li>
-                  )
-                )}
-              </ul>
-              <BookForm />
-            </div>
-          )}
+          {activeTab === "features" && <Features camper={camper} />}
+          {activeTab === "reviews" && <Reviews reviews={reviews} />}
         </div>
-        {/* </div> */}
       </Modal>
     </>
   );

@@ -1,0 +1,12 @@
+.modalBottomContainer {
+  display: flex;
+  width: 100%;
+  gap: 24px;
+}
+
+.modalLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+  width: 430px;
+}

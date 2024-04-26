@@ -1,26 +1,21 @@
+import { useState } from "react";
 import { CiLocationOn } from "react-icons/ci";
-import { IoPeopleOutline } from "react-icons/io5";
-import { TbAutomaticGearbox } from "react-icons/tb";
-import { MdOutlineLocalGasStation } from "react-icons/md";
-import { TbToolsKitchen2 } from "react-icons/tb";
-import { IoBedOutline } from "react-icons/io5";
-import { MdOutlineAir } from "react-icons/md";
 import { FaStar } from "react-icons/fa6";
 import { FaRegHeart } from "react-icons/fa";
 import { TbCurrencyEuro } from "react-icons/tb";
 import { FaHeart } from "react-icons/fa6";
-
-import css from "./CampersListItem.module.css";
 import { useDispatch, useSelector } from "react-redux";
+import clsx from "clsx";
+
 import {
   addFavorite,
   removeFavorite,
   selectFavoriteItems,
 } from "../../redux/favoriteCampers/slice";
-import clsx from "clsx";
-import { useState } from "react";
-import CamperDetailsModal from "../CamperDetailsModal/CamperDetailsModal";
-import OptionsList from "../PropsList/PropsList";
+import CamperDetailsModal from "../CamperDetailsModal";
+import OptionsList from "../PropsList";
+
+import css from "./CampersListItem.module.css";
 
 export default function CampersListItem({
   _id,
@@ -48,9 +43,6 @@ export default function CampersListItem({
   const favoritesCampers = useSelector(selectFavoriteItems);
 
   const dispatch = useDispatch();
-  // const capitalizeFirstLetter = (string) => {
-  //   return string.charAt(0).toUpperCase() + string.slice(1);
-  // };
 
   const camper = {
     _id,

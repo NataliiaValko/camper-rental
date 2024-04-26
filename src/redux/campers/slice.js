@@ -5,17 +5,10 @@ const campersSlice = createSlice({
   name: "campers",
   initialState: {
     items: [],
-    // page: 1,
-    // limit: 4,
     showLoadMore: false,
     isLoading: false,
     error: null,
   },
-  // reducers: {
-  //   // setPage: (state) => {
-  //   //   state.page = state.page + 1;
-  //   // },
-  // },
   extraReducers: (builder) =>
     builder
       .addCase(getCampers.pending, (state) => {
@@ -44,12 +37,6 @@ const campersSlice = createSlice({
     selectItems(state) {
       return state.items;
     },
-    // selectPage(state) {
-    //   return state.page;
-    // },
-    // selectLimit(state) {
-    //   return state.limit;
-    // },
     selectError(state) {
       return state.error;
     },
@@ -62,13 +49,7 @@ const campersSlice = createSlice({
   },
 });
 
-export const {
-  selectItems,
-  // selectLimit,
-  // selectPage,
-  selectError,
-  selectIsLoading,
-  selectShowLoadMore,
-} = campersSlice.selectors;
-// export const { setPage } = campersSlice.actions;
+export const { selectItems, selectError, selectIsLoading, selectShowLoadMore } =
+  campersSlice.selectors;
+
 export const campersReducer = campersSlice.reducer;

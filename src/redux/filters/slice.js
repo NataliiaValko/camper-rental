@@ -23,17 +23,18 @@ export const filtersReducer = filtersSlice.reducer;
 export const selectFilteredCampers = createSelector(
   [selectItems, selectFilters],
   (campers, filters) => {
+
+
+    console.log(campers, console.log(););
     const normalizedFilters = Object.fromEntries(
       Object.entries(filters)
         .filter(([key, value]) => {
-          // Вертаємо true лише для тих пар, де значення не є порожнім рядком
           return Array.isArray(value) ? value[0] !== "" : value !== "";
         })
         .map(([key, value]) => [key, Array.isArray(value) ? value[0] : value])
     );
 
     return campers.filter((camper) => {
-      // Перевіряємо кожен критерій фільтру
       for (const key in normalizedFilters) {
         if (
           key === "location" &&
@@ -55,7 +56,6 @@ export const selectFilteredCampers = createSelector(
           return false;
         }
       }
-      // Якщо кемпер відповідає всім умовам, включаємо його до результату
       return true;
     });
   }

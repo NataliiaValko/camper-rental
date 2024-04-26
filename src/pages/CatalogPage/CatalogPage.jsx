@@ -1,20 +1,14 @@
+import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import BtnLoadMore from "../../components/BtnLoadMore/BtnLoadMore";
-import CampersList from "../../components/CampersList/CampersList";
-import Loader from "../../components/Loader/Loader";
-import {
-  selectError,
-  // selectShowLoadMore,
-  selectIsLoading,
-  // selectItems,
-} from "../../redux/campers/slice";
+
+import BtnLoadMore from "../../components/BtnLoadMore";
+import CampersList from "../../components/CampersList";
+import Loader from "../../components/Loader";
+import Filters from "../../components/Filters";
+import { selectError, selectIsLoading } from "../../redux/campers/slice";
+import { fetchCampers } from "../../service/campersAPI";
 
 import css from "./CatalogPage.module.css";
-import { useSelector } from "react-redux";
-// import { getCampers } from "../../redux/campers/operations";
-import Filters from "../../components/Filters/Filters";
-// import { selectFilteredCampers } from "../../redux/filters/slice";
-import { fetchCampers } from "../../service/campersAPI";
 
 export default function CatalogPage() {
   const [page, setPage] = useState(1);
@@ -26,7 +20,6 @@ export default function CatalogPage() {
 
   useEffect(() => {
     (async () => {
-      // console.log(page);
       const data = await fetchCampers({ page, limit });
       setShowLoadMore(!!data.length);
 
@@ -35,7 +28,6 @@ export default function CatalogPage() {
   }, [page, limit]);
 
   const handleClick = () => {
-    // console.log(123);
     setPage(page + 1);
   };
   return (
@@ -47,9 +39,7 @@ export default function CatalogPage() {
         <section className={css.section}>
           <h1 className="visually-hidden">Our catalog</h1>
           {Array.isArray(campers) && campers.length > 0 && (
-            <>
-              <CampersList campers={campers} />
-            </>
+            <CampersList campers={campers} />
           )}
           {showLoadMore && <BtnLoadMore onClick={handleClick} />}
           {isLoading && <Loader />}
