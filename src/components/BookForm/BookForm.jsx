@@ -1,6 +1,7 @@
 import { ErrorMessage, Field, Formik, Form } from "formik";
 import * as Yup from "yup";
 import css from "./BookForm.module.css";
+import DatePicker from "../DatePicker/DatePicker";
 
 export default function BookForm() {
   return (
@@ -45,12 +46,7 @@ export default function BookForm() {
             </label>
             <ErrorMessage name="email" component="div" />
             <label className={css.label} htmlFor="bookingDate">
-              <Field
-                className={css.field}
-                name="bookingDate"
-                type="date"
-                placeholder="Booking Date"
-              />
+              <DatePicker name="booking_date" className={css.field} />
             </label>
             <ErrorMessage name="bookingDate" component="div" />
             <label className={css.label} htmlFor="comment">
